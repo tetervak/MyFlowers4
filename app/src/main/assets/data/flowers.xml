@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <flower id="1" name="aster">
+        <label>Aster</label>
+        <description>The name Aster comes from the Ancient Greek word meaning star, referring to the shape of the flower head.</description>
+        <link>https://en.wikipedia.org/wiki/Aster_(genus)</link>
+    </flower>
+    <flower id="2" name="carnation">
+        <label>Carnation</label>
+        <description>Carnations require well-drained, neutral to slightly alkaline soil, and full sun. Examples include Gina Porto, Helen and Red Rocket</description>
+        <link>https://en.wikipedia.org/wiki/Dianthus_caryophyllus</link>
+    </flower>
+    <flower id="3" name="daffodil">
+        <label>Daffodil</label>
+        <description>Daffodil is a common English name, sometimes used for all varieties, and commonly used by the American Daffodil Society</description>
+        <link>https://en.wikipedia.org/wiki/Narcissus_(plant)</link>
+    </flower>
+    <flower id="4" name="rose">
+        <label>Rose</label>
+        <description>A rose is a woody perennial within the family Rosaceae. They form a group of erect shrubs, and climbing or trailing plants.</description>
+        <link>https://en.wikipedia.org/wiki/Rose</link>
+    </flower>
+    <flower id="5"  name="orchid">
+        <label>Orchid</label>
+        <description>The orchid family is a diverse and widespread family in the order Asparagales. It is one of the largest families of flowering plants.</description>
+        <link>https://en.wikipedia.org/wiki/Orchidaceae</link>
+    </flower>
+</catalog>

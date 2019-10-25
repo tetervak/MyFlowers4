@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="Flower List"
+    app:startDestination="@id/flowerListFragment">
+
+    <fragment
+        android:id="@+id/flowerListFragment"
+        android:name="ca.javateacher.myflowers4.FlowerListFragment"
+        android:label="Flower List"
+        tools:layout="@layout/fragment_flower_list">
+        <action
+            android:id="@+id/action_list_to_details"
+            app:destination="@id/flowerDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flowerDetailsFragment"
+        android:name="ca.javateacher.myflowers4.FlowerDetailsFragment"
+        android:label="Flower Details" />
+    <action
+        android:id="@+id/action_global_list"
+        app:destination="@id/flowerListFragment"
+        app:popUpTo="@+id/flowerListFragment"
+        app:popUpToInclusive="false" />
+    <dialog
+        android:id="@+id/aboutFragment"
+        android:name="ca.javateacher.myflowers4.AboutFragment"
+        android:label="About" />
+    <action
+        android:id="@+id/action_global_about"
+        app:destination="@id/aboutFragment" />
+</navigation>

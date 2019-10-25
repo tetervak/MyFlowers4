@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="ca.javateacher.myflowers2.FlowerListFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Teal50"
+    android:orientation="vertical"
+    tools:context="ca.javateacher.myflowers4.FlowerListFragment">
+
+    <TextView
+        android:text="@string/flower_list_fragment_label"
+        style="@style/fragment_label" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/flower_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/gap1"
+            android:layout_marginLeft="@dimen/gap3"
+            android:layout_marginRight="@dimen/gap3"
+            app:layoutManager="LinearLayoutManager"
+            tools:context="ca.javateacher.myflowers4.FlowerListFragment"
+            tools:listitem="@layout/flower_list_item" />
+</LinearLayout>

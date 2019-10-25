@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="flower"
+            type="ca.javateacher.myflowers4.dto.FlowerListItemDto" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/gap0"
+        app:cardBackgroundColor="@color/Amber100"
+        app:cardCornerRadius="8dp"
+        app:contentPadding="@dimen/gap0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/flower_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/aster_small"
+                tools:ignore="ContentDescription"
+                imageFromAsset="@{flower.image}"/>
+
+            <TextView
+                android:id="@+id/flower_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Orange500"
+                android:text="@{flower.label}"
+                tools:text="Aster" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
+
+
+

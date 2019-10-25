@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="flower" type="ca.javateacher.myflowers4.dto.FlowerDetailsDto" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Yellow200"
+        android:orientation="vertical"
+        tools:context="ca.javateacher.myflowers4.FlowerDetailsFragment">
+
+        <TextView
+            android:id="@+id/flower_details_fragment_label"
+            style="@style/fragment_label"
+            android:text="@string/flower_details_fragment_label" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/gap0"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/flower_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/gap1"
+                    android:text="@{flower.label}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="@color/Orange500"
+                    tools:text="Aster" />
+
+                <ImageView
+                    android:id="@+id/flower_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/gap1"
+                    android:src="@drawable/aster_large"
+                    tools:ignore="ContentDescription"
+                    imageFromAsset="@{flower.image}"/>
+
+                <TextView
+                    android:id="@+id/flower_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/gap3"
+                    android:layout_marginTop="@dimen/gap2"
+                    android:layout_marginRight="@dimen/gap3"
+                    android:text="@{flower.description}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    tools:text="Flower Description" />
+
+                <TextView
+                    android:id="@+id/wiki_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/gap1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    wikiLink="@{flower.uri}"
+                    tools:text="@string/learn_more_at_wikipedia" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>

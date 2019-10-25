@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">My Flowers 4</string>
+
+    <!-- about dialog -->
+    <string name="about">About</string>
+    <string name="author">Alex Tetervak, Sheridan College, 2019</string>
+
+    <!-- floating label -->
+    <string name="sheridan">Sheridan, 2019</string>
+
+    <!-- activity & fragment labels -->
+    <string name="flower_list_fragment_label">Flower List Fragment</string>
+    <string name="flower_details_fragment_label">Flower Details Fragment</string>
+    <string name="main_activity_label">Main Activity</string>
+    <string name="wikipedia">Wikipedia</string>
+    <string name="learn_more_at_wikipedia">Learn more at Wikipedia</string>
+
+    <!-- menu of the list fragment -->
+    <string name="load_file_data">Load File Data</string>
+    <string name="clear_all_data">Clear All Data</string>
+
+    <!-- menu of the details fragment -->
+    <string name="delete_flower">Delete Flower</string>
+
+    <!-- used in the generated data -->
+    <string name="wikipedia_aster_url">https://en.wikipedia.org/wiki/Aster_(genus)</string>
+    <string name="description">description</string>
+
+</resources>

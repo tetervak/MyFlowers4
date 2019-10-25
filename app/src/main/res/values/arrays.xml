@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="flower_labels">
+        <item>Aster</item>
+        <item>Carnation</item>
+        <item>Daffodil</item>
+        <item>Orchid</item>
+        <item>Rose</item>
+    </string-array>
+    <string-array name="flower_names">
+        <item>aster</item>
+        <item>carnation</item>
+        <item>daffodil</item>
+        <item>orchid</item>
+        <item>rose</item>
+    </string-array>
+</resources>
