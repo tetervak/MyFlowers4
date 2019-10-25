@@ -1,6 +1,7 @@
 package ca.javateacher.myflowers4.di;
 
 import android.app.Application;
+import android.content.Context;
 
 import javax.inject.Singleton;
 
@@ -18,7 +19,7 @@ public interface ApplicationComponent {
   // Factory to create instances of the ApplicationComponent
   @Component.Factory
   interface Factory {
-    ApplicationComponent create(@BindsInstance Application application);
+    ApplicationComponent create(@BindsInstance Context context);
   }
 
   void inject(FlowerListViewModel flowerListViewModel);

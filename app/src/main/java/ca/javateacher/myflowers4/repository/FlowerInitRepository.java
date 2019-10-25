@@ -16,9 +16,9 @@ public abstract class FlowerInitRepository {
 
   private Context mAppContext;
 
-  public FlowerInitRepository(@NonNull Application application){
+  public FlowerInitRepository(@NonNull Context context){
     Log.d(TAG, "FlowerInitRepository() called");
-    mAppContext = application;
+    mAppContext = context.getApplicationContext();
   }
 
   @NonNull

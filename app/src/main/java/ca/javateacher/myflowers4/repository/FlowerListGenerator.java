@@ -1,6 +1,6 @@
 package ca.javateacher.myflowers4.repository;
 
-import android.app.Application;
+import android.content.Context;
 import android.content.res.Resources;
 import android.util.Log;
 import androidx.annotation.NonNull;
@@ -16,8 +16,8 @@ import ca.javateacher.myflowers4.model.Flower;
 public class FlowerListGenerator extends FlowerInitRepository {
 
   @Inject
-  public FlowerListGenerator(Application application){
-    super(application);
+  public FlowerListGenerator(Context context){
+    super(context);
   }
 
   private static final String TAG = "FlowerListGenerator";

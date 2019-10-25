@@ -1,6 +1,7 @@
 package ca.javateacher.myflowers4.repository;
 
 import android.app.Application;
+import android.content.Context;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -29,8 +30,8 @@ public class FlowerFileReader extends FlowerInitRepository {
   private static final String TAG = "FlowerFileReader";
 
   @Inject
-  public FlowerFileReader(Application application){
-    super(application);
+  public FlowerFileReader(Context context){
+    super(context);
     Log.d(TAG, "FlowerFileReader() called");
   }
 
