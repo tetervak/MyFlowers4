@@ -51,12 +51,11 @@ public class FlowerDetailsFragment extends Fragment {
     assert getActivity() != null;
     mFlowerDetailsViewModel = ViewModelProviders.of(this)
       .get(FlowerDetailsViewModel.class);
-    mFlowerDetailsViewModel.getFlowerDetailsById(mFlowerId).observe(this,
-      flower -> {
-        if(flower != null){
-          mBinding.setFlower(flower);
-        }
-      });
+    // set the query data
+    mFlowerDetailsViewModel.setFlowerId(mFlowerId);
+    // observe the query result
+    mFlowerDetailsViewModel
+        .getFlowerDetails().observe(this,flower -> mBinding.setFlower(flower));
   }
 
   @Override

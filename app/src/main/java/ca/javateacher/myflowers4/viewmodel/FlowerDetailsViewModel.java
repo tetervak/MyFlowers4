@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 
 import javax.inject.Inject;
@@ -22,14 +23,25 @@ public class FlowerDetailsViewModel extends AndroidViewModel {
   @Inject
   public FlowerRepository mFlowerRepository;
 
+  private MutableLiveData<Integer> mFlowerIdData;
+  private LiveData<FlowerDetailsDto> mFlowerDetailsData;
+
   public FlowerDetailsViewModel(@NonNull Application application) {
     super(application);
     Log.d(TAG, "FlowerDetailsViewModel() called");
     ((FlowerApplication)application).getApplicationComponent().inject(this);
+
+    mFlowerIdData = new MutableLiveData<>();
+    mFlowerDetailsData = Transformations.switchMap(mFlowerIdData,this::getFlowerDetailsById);
   }
 
-  public void deleteFlowerById(int id){
-    mFlowerRepository.deleteFlowerById(id);
+  public void setFlowerId(int id){
+    mFlowerIdData.setValue(id);
+  }
+
+  @NonNull
+  public LiveData<FlowerDetailsDto> getFlowerDetails(){
+    return mFlowerDetailsData;
   }
 
   @NonNull
@@ -37,6 +49,10 @@ public class FlowerDetailsViewModel extends AndroidViewModel {
     return
         Transformations.map(mFlowerRepository.getFlowerDataById(id),
             this::flower2Details);
+  }
+
+  public void deleteFlowerById(int id){
+    mFlowerRepository.deleteFlowerById(id);
   }
 
   @NonNull
