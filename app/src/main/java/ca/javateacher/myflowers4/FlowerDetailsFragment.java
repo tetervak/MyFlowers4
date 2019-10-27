@@ -21,7 +21,8 @@ public class FlowerDetailsFragment extends Fragment {
 
   private int mFlowerId;
   private FragmentFlowerDetailsBinding mBinding;
-  private FlowerDetailsViewModel mFlowerDetailsViewModel;
+  private FlowerDetailsPresenter mPresenter;
+  private FlowerDetailsViewModel mViewModel;
 
   public FlowerDetailsFragment() {
         // Required empty public constructor
@@ -42,6 +43,7 @@ public class FlowerDetailsFragment extends Fragment {
     // lookup the index from the arguments
     assert getArguments() != null;
     mFlowerId = getArguments().getInt(FLOWER_ID_KEY);
+    mPresenter = new FlowerDetailsPresenter(this, mBinding);
     return mBinding.getRoot();
   }
 
@@ -49,13 +51,12 @@ public class FlowerDetailsFragment extends Fragment {
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     assert getActivity() != null;
-    mFlowerDetailsViewModel = ViewModelProviders.of(this)
+    mViewModel = ViewModelProviders.of(this)
       .get(FlowerDetailsViewModel.class);
     // set the query data
-    mFlowerDetailsViewModel.setFlowerId(mFlowerId);
-    // observe the query result
-    mFlowerDetailsViewModel
-        .getFlowerDetails().observe(this,flower -> mBinding.setFlower(flower));
+    mViewModel.setFlowerId(mFlowerId);
+    // the presenter observes the query result
+    mPresenter.setViewModel(mViewModel);
   }
 
   @Override
@@ -69,7 +70,7 @@ public class FlowerDetailsFragment extends Fragment {
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
     switch(item.getItemId()) {
       case R.id.delete_flower:{
-        mFlowerDetailsViewModel.deleteFlowerById(mFlowerId);
+        mViewModel.deleteFlowerById(mFlowerId);
         Navigation.findNavController(getView()).navigate(R.id.action_global_list);
         return true;
       }
