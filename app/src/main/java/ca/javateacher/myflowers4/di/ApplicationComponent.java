@@ -13,7 +13,8 @@ import dagger.Component;
 
 // Definition of the Application  Dagger graph
 @Singleton
-@Component(modules = {FlowerDatabaseModule.class, FlowerRepositoryModule.class})
+@Component(
+    modules = {FlowerDatabaseModule.class, FlowerRepositoryModule.class , FlowerDomainModule.class})
 public interface ApplicationComponent {
 
   // Factory to create instances of the ApplicationComponent
