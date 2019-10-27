@@ -25,15 +25,18 @@ public class FlowerDetailsViewModel extends AndroidViewModel {
   }
 
   public void setFlowerId(int id){
+    Log.d(TAG, "setFlowerId() called with: id = [" + id + "]");
     mInter.setFlowerId(id);
   }
 
   @NonNull
   public LiveData<FlowerDetailsDto> getFlowerDetails(){
+    Log.d(TAG, "getFlowerDetails() called");
     return mInter.getFlowerDetails();
   }
 
   public void deleteFlower(){
+    Log.d(TAG, "deleteFlower() called");
     mInter.deleteFlower();
   }
 

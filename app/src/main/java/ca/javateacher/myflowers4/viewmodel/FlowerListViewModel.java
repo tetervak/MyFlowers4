@@ -26,15 +26,18 @@ public class FlowerListViewModel extends AndroidViewModel {
   }
 
   public void loadSampleData(){
+    Log.d(TAG, "loadSampleData() called");
     mInter.loadSampleData();
   }
 
   public void clearAllData(){
+    Log.d(TAG, "clearAllData() called");
     mInter.clearAllData();
   }
 
   @NonNull
   public LiveData<List<FlowerListItemDto>> getFlowerListData() {
+    Log.d(TAG, "getFlowerListData() called");
     return mInter.getFlowerListData();
   }
 

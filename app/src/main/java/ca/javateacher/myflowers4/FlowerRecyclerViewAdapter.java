@@ -5,6 +5,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,64 +19,69 @@ import ca.javateacher.myflowers4.domain.FlowerListItemDto;
 public class FlowerRecyclerViewAdapter
         extends RecyclerView.Adapter<FlowerRecyclerViewAdapter.ViewHolder> {
 
-    private List<FlowerListItemDto> mFlowerList;
+  private static final String TAG = "FlowerRecyclerViewAdapt";
 
-    public FlowerRecyclerViewAdapter() {
+  private List<FlowerListItemDto> mFlowerList;
+
+  public FlowerRecyclerViewAdapter() {
+    Log.d(TAG, "FlowerRecyclerViewAdapter() called");
+  }
+
+  public void setFlowerList(List<FlowerListItemDto> flowerList) {
+    Log.d(TAG, "setFlowerList() called");
+    mFlowerList = flowerList;
+    notifyDataSetChanged();
+  }
+
+  @Override
+  @NonNull
+  public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+      FlowerListItemBinding binding
+              = FlowerListItemBinding.inflate(
+              LayoutInflater.from(parent.getContext()), parent, false);
+      return new ViewHolder(binding);
+  }
+
+  @Override
+  public void onBindViewHolder(final ViewHolder holder, int position) {
+      FlowerListItemDto flower = mFlowerList.get(position);
+      holder.mFlower = flower;
+      holder.mBinding.setFlower(flower);
+
+      holder.mBinding.getRoot().setOnClickListener(v -> showDetails(v, flower.getId()));
+  }
+
+  private void showDetails(View v, int id) {
+    Log.d(TAG, "showDetails() called with: id = [" + id + "]");
+    Bundle bundle = new Bundle();
+    bundle.putInt(FLOWER_ID_KEY, id);
+    Navigation.findNavController(v).navigate(R.id.action_list_to_details, bundle);
+  }
+
+  @Override
+  public int getItemCount() {
+    if (mFlowerList != null) {
+        return mFlowerList.size();
+    }else{
+        return 0;
     }
+  }
 
-    public void setFlowerList(List<FlowerListItemDto> flowerList) {
-        mFlowerList = flowerList;
-        notifyDataSetChanged();
+  public class ViewHolder extends RecyclerView.ViewHolder {
+
+    public final FlowerListItemBinding mBinding;
+    public FlowerListItemDto mFlower;
+
+    public ViewHolder(FlowerListItemBinding binding) {
+      super(binding.getRoot());
+      mBinding = binding;
     }
 
     @Override
     @NonNull
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        FlowerListItemBinding binding
-                = FlowerListItemBinding.inflate(
-                LayoutInflater.from(parent.getContext()), parent, false);
-        return new ViewHolder(binding);
+    public String toString() {
+        return super.toString() + " '"
+                + mBinding.flowerLabel.getText() + "'";
     }
-
-    @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
-        FlowerListItemDto flower = mFlowerList.get(position);
-        holder.mFlower = flower;
-        holder.mBinding.setFlower(flower);
-
-        holder.mBinding.getRoot().setOnClickListener(v -> showDetails(v, flower.getId()));
-    }
-
-    private void showDetails(View v, int id) {
-        Bundle bundle = new Bundle();
-        bundle.putInt(FLOWER_ID_KEY, id);
-        Navigation.findNavController(v).navigate(R.id.action_list_to_details, bundle);
-    }
-
-    @Override
-    public int getItemCount() {
-        if (mFlowerList != null) {
-            return mFlowerList.size();
-        }else{
-            return 0;
-        }
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        public final FlowerListItemBinding mBinding;
-        public FlowerListItemDto mFlower;
-
-        public ViewHolder(FlowerListItemBinding binding) {
-            super(binding.getRoot());
-            mBinding = binding;
-        }
-
-        @Override
-        @NonNull
-        public String toString() {
-            return super.toString() + " '"
-                    + mBinding.flowerLabel.getText() + "'";
-        }
-    }
+  }
 }

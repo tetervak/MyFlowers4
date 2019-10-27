@@ -6,6 +6,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +21,8 @@ import ca.javateacher.myflowers4.viewmodel.FlowerDetailsViewModel;
 
 public class FlowerDetailsFragment extends Fragment {
 
+  private static final String TAG = "FlowerDetailsFragment";
+
   private int mFlowerId;
   private FlowerDetailsPresenter mPresenter;
   private FlowerDetailsViewModel mViewModel;
@@ -30,6 +34,7 @@ public class FlowerDetailsFragment extends Fragment {
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    Log.d(TAG, "onCreate() called");
     // notify that the fragment has own menu
     setHasOptionsMenu(true);
   }
@@ -37,6 +42,7 @@ public class FlowerDetailsFragment extends Fragment {
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                          Bundle savedInstanceState) {
+    Log.d(TAG, "onCreateView() called");
     // Inflate the layout for this fragment
     FragmentFlowerDetailsBinding binding
         = FragmentFlowerDetailsBinding.inflate(getLayoutInflater());
@@ -50,6 +56,7 @@ public class FlowerDetailsFragment extends Fragment {
   @Override
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
+    Log.d(TAG, "onActivityCreated() called");
     assert getActivity() != null;
     mViewModel = ViewModelProviders.of(this)
       .get(FlowerDetailsViewModel.class);
@@ -62,14 +69,17 @@ public class FlowerDetailsFragment extends Fragment {
   @Override
   public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
     super.onCreateOptionsMenu(menu, inflater);
+    Log.d(TAG, "onCreateOptionsMenu() called");
     inflater.inflate(R.menu.menu_details, menu);
   }
 
   @SuppressWarnings({"SwitchStatementWithTooFewBranches", "ConstantConditions"})
   @Override
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    Log.d(TAG, "onOptionsItemSelected() called");
     switch(item.getItemId()) {
       case R.id.delete_flower:{
+        Log.d(TAG, "onOptionsItemSelected(): delete flower");
         mViewModel.deleteFlower();
         Navigation.findNavController(getView()).navigate(R.id.action_global_list);
         return true;
