@@ -1,13 +1,12 @@
 package ca.javateacher.myflowers4.repository;
 
-import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 import androidx.annotation.NonNull;
 import java.util.List;
 import javax.inject.Singleton;
 
-import ca.javateacher.myflowers4.model.Flower;
+import ca.javateacher.myflowers4.domain.Flower;
 
 @Singleton
 public abstract class FlowerInitRepository {

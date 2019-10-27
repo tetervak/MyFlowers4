@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.List;
 
-import ca.javateacher.myflowers4.model.Flower;
+import ca.javateacher.myflowers4.domain.Flower;
 import ca.javateacher.myflowers4.repository.FlowerFileReader;
 
 import static org.junit.Assert.assertEquals;

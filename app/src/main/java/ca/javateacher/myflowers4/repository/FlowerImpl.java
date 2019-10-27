@@ -1,6 +1,6 @@
 package ca.javateacher.myflowers4.repository;
 
-import ca.javateacher.myflowers4.model.Flower;
+import ca.javateacher.myflowers4.domain.Flower;
 
 public class FlowerImpl implements Flower {
 

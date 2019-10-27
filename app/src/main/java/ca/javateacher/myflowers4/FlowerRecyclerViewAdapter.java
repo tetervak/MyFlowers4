@@ -13,7 +13,7 @@ import java.util.List;
 
 import static ca.javateacher.myflowers4.Constants.*;
 import ca.javateacher.myflowers4.databinding.FlowerListItemBinding;
-import ca.javateacher.myflowers4.dto.FlowerListItemDto;
+import ca.javateacher.myflowers4.domain.FlowerListItemDto;
 
 public class FlowerRecyclerViewAdapter
         extends RecyclerView.Adapter<FlowerRecyclerViewAdapter.ViewHolder> {

@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-import ca.javateacher.myflowers4.model.Flower;
+import ca.javateacher.myflowers4.domain.Flower;
 import ca.javateacher.myflowers4.repository.FlowerListGenerator;
 
 public class FlowerListGeneratorTest {

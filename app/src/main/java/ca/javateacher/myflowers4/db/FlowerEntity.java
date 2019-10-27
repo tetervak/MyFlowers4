@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-import ca.javateacher.myflowers4.model.Flower;
+import ca.javateacher.myflowers4.domain.Flower;
 
 @Entity(tableName = "flowers")
 public class FlowerEntity implements Flower {

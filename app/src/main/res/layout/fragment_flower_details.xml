@@ -5,7 +5,7 @@
     <data>
         <variable
             name="flower"
-            type="ca.javateacher.myflowers4.dto.FlowerDetailsDto" />
+            type="ca.javateacher.myflowers4.domain.FlowerDetailsDto" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"

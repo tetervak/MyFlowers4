@@ -9,7 +9,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import ca.javateacher.myflowers4.R;
-import ca.javateacher.myflowers4.model.Flower;
+import ca.javateacher.myflowers4.domain.Flower;
 
 // used for debugging only
 @Singleton

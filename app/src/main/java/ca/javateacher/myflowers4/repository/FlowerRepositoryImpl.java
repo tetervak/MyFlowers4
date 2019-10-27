@@ -14,7 +14,7 @@ import javax.inject.Singleton;
 
 import ca.javateacher.myflowers4.db.FlowerDao;
 import ca.javateacher.myflowers4.db.FlowerEntity;
-import ca.javateacher.myflowers4.model.Flower;
+import ca.javateacher.myflowers4.domain.Flower;
 
 @Singleton
 public class FlowerRepositoryImpl implements FlowerRepository {

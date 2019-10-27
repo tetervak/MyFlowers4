@@ -1,6 +1,5 @@
 package ca.javateacher.myflowers4.repository;
 
-import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
@@ -22,7 +21,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import ca.javateacher.myflowers4.model.Flower;
+import ca.javateacher.myflowers4.domain.Flower;
 
 @Singleton
 public class FlowerFileReader extends FlowerInitRepository {

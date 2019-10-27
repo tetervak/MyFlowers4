@@ -1,4 +1,4 @@
-package ca.javateacher.myflowers4.model;
+package ca.javateacher.myflowers4.domain;
 
 public interface Flower {
   long getId();

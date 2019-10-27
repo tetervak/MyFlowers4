@@ -5,7 +5,7 @@
     <data>
         <variable
             name="flower"
-            type="ca.javateacher.myflowers4.dto.FlowerListItemDto" />
+            type="ca.javateacher.myflowers4.domain.FlowerListItemDto" />
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

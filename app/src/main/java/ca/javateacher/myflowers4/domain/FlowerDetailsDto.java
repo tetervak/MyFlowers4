@@ -1,5 +1,6 @@
-package ca.javateacher.myflowers4.dto;
+package ca.javateacher.myflowers4.domain;
 
+// data transfer object,
 // used to present flower data to the details fragment
 public class FlowerDetailsDto {
 
