@@ -12,7 +12,7 @@ import javax.inject.Inject;
 import ca.javateacher.myflowers4.repository.FlowerRepository;
 
 // represents flower list interactions
-public class FlowerListInterImpl implements FlowerListInter {
+public class FlowerListInterImpl implements FlowerListInteractions {
 
   private FlowerRepository mFlowerRepository;
 
@@ -52,7 +52,7 @@ public class FlowerListInterImpl implements FlowerListInter {
   private FlowerListItemDto flower2ListItem(@NonNull Flower flower){
     String image = "images/flowers/" + flower.getName() + "_small.jpeg";
     return
-        new FlowerListItemDto(
+        new FlowerListItemDtoImpl(
             (int)flower.getId(),
             flower.getLabel(),
             image);

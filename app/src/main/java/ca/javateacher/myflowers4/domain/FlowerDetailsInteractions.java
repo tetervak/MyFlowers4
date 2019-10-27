@@ -3,7 +3,8 @@ package ca.javateacher.myflowers4.domain;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 
-public interface FlowerDetailsInter {
+public interface FlowerDetailsInteractions {
+
   void setFlowerId(int id);
 
   @NonNull

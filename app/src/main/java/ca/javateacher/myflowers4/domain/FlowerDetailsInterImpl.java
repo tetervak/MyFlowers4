@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import ca.javateacher.myflowers4.repository.FlowerRepository;
 
 // represents flower details interactions
-public class FlowerDetailsInterImpl implements FlowerDetailsInter {
+public class FlowerDetailsInterImpl implements FlowerDetailsInteractions {
 
   private FlowerRepository mFlowerRepository;
   private MutableLiveData<Integer> mFlowerIdData;
@@ -50,7 +50,7 @@ public class FlowerDetailsInterImpl implements FlowerDetailsInter {
   private FlowerDetailsDto flower2Details(@NonNull Flower flower){
     String image = "images/flowers/" + flower.getName() + "_large.jpeg";
     return
-        new FlowerDetailsDto(
+        new FlowerDetailsDtoImpl(
             (int)flower.getId(),
             flower.getLabel(),
             flower.getDescription(),

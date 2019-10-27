@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData;
 import javax.inject.Inject;
 
 import ca.javateacher.myflowers4.di.FlowerApplication;
-import ca.javateacher.myflowers4.domain.FlowerDetailsInter;
+import ca.javateacher.myflowers4.domain.FlowerDetailsInteractions;
 import ca.javateacher.myflowers4.domain.FlowerDetailsDto;
 
 public class FlowerDetailsViewModel extends AndroidViewModel {
@@ -16,7 +16,7 @@ public class FlowerDetailsViewModel extends AndroidViewModel {
   private static final String TAG = "FlowerDetailsViewModel";
 
   @Inject
-  public FlowerDetailsInter mInter;
+  public FlowerDetailsInteractions mInter;
 
   public FlowerDetailsViewModel(@NonNull Application application) {
     super(application);

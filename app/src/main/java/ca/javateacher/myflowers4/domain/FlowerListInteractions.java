@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-public interface FlowerListInter {
+public interface FlowerListInteractions {
 
   void loadFileData();
   void clearAllData();

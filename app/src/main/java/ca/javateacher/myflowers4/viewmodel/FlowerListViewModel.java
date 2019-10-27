@@ -9,7 +9,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import ca.javateacher.myflowers4.di.FlowerApplication;
-import ca.javateacher.myflowers4.domain.FlowerListInter;
+import ca.javateacher.myflowers4.domain.FlowerListInteractions;
 import ca.javateacher.myflowers4.domain.FlowerListItemDto;
 
 public class FlowerListViewModel extends AndroidViewModel {
@@ -17,7 +17,7 @@ public class FlowerListViewModel extends AndroidViewModel {
   private static final String TAG = "FlowerListViewModel";
 
   @Inject
-  public FlowerListInter mInter;
+  public FlowerListInteractions mInter;
 
   public FlowerListViewModel(@NonNull Application application) {
     super(application);
