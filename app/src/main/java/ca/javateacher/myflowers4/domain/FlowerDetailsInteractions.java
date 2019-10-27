@@ -10,5 +10,5 @@ public interface FlowerDetailsInteractions {
   @NonNull
   LiveData<FlowerDetailsDto> getFlowerDetails();
 
-  void deleteFlowerById(int id);
+  void deleteFlower();
 }

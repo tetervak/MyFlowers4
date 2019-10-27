@@ -33,8 +33,8 @@ public class FlowerDetailsViewModel extends AndroidViewModel {
     return mInter.getFlowerDetails();
   }
 
-  public void deleteFlowerById(int id){
-    mInter.deleteFlowerById(id);
+  public void deleteFlower(){
+    mInter.deleteFlower();
   }
 
 }

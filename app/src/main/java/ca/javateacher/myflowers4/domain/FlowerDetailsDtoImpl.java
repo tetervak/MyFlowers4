@@ -18,22 +18,27 @@ public class FlowerDetailsDtoImpl implements FlowerDetailsDto{
     mImage = image;
   }
 
+  @Override
   public int getId() {
     return mId;
   }
 
+  @Override
   public String getLabel() {
     return mLabel;
   }
 
+  @Override
   public String getDescription() {
     return mDescription;
   }
 
+  @Override
   public String getUri() {
     return mUri;
   }
 
+  @Override
   public String getImage() {
     return mImage;
   }

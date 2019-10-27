@@ -20,7 +20,6 @@ import ca.javateacher.myflowers4.viewmodel.FlowerDetailsViewModel;
 public class FlowerDetailsFragment extends Fragment {
 
   private int mFlowerId;
-  private FragmentFlowerDetailsBinding mBinding;
   private FlowerDetailsPresenter mPresenter;
   private FlowerDetailsViewModel mViewModel;
 
@@ -39,12 +38,13 @@ public class FlowerDetailsFragment extends Fragment {
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                          Bundle savedInstanceState) {
     // Inflate the layout for this fragment
-    mBinding = FragmentFlowerDetailsBinding.inflate(getLayoutInflater());
+    FragmentFlowerDetailsBinding binding
+        = FragmentFlowerDetailsBinding.inflate(getLayoutInflater());
     // lookup the index from the arguments
     assert getArguments() != null;
     mFlowerId = getArguments().getInt(FLOWER_ID_KEY);
-    mPresenter = new FlowerDetailsPresenter(this, mBinding);
-    return mBinding.getRoot();
+    mPresenter = new FlowerDetailsPresenter(this, binding);
+    return binding.getRoot();
   }
 
   @Override
@@ -70,7 +70,7 @@ public class FlowerDetailsFragment extends Fragment {
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
     switch(item.getItemId()) {
       case R.id.delete_flower:{
-        mViewModel.deleteFlowerById(mFlowerId);
+        mViewModel.deleteFlower();
         Navigation.findNavController(getView()).navigate(R.id.action_global_list);
         return true;
       }

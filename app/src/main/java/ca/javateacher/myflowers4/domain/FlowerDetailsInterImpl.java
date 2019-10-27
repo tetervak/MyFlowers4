@@ -42,7 +42,14 @@ public class FlowerDetailsInterImpl implements FlowerDetailsInteractions {
   }
 
   @Override
-  public void deleteFlowerById(int id){
+  public void deleteFlower(){
+    Integer flowerId = mFlowerIdData.getValue();
+    if(flowerId != null){
+      deleteFlowerById(flowerId);
+    }
+  }
+
+  private void deleteFlowerById(int id){
     mFlowerRepository.deleteFlowerById(id);
   }
 
