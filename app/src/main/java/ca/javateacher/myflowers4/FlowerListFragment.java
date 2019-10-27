@@ -63,8 +63,8 @@ public class FlowerListFragment extends Fragment {
   @Override
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
     switch(item.getItemId()) {
-      case R.id.load_data_file:{
-        mViewModel.loadFileData();
+      case R.id.load_sample_data:{
+        mViewModel.loadSampleData();
         return true;
       }
       case R.id.clear_all_data:{

@@ -16,7 +16,7 @@
     <string name="learn_more_at_wikipedia">Learn more at Wikipedia</string>
 
     <!-- menu of the list fragment -->
-    <string name="load_file_data">Load File Data</string>
+    <string name="load_sample_data">Load Sample Data</string>
     <string name="clear_all_data">Clear All Data</string>
 
     <!-- menu of the details fragment -->

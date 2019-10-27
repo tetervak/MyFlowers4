@@ -43,7 +43,7 @@ public class FlowerRepositoryImpl implements FlowerRepository {
   }
 
   @Override
-  public void loadFileData(){
+  public void loadSampleData(){
     Thread thread = new Thread(() -> {
       List<Flower> flowers = mFlowerInitRepository.getFlowerListSync();
       mFlowerDao.insertFlowers(flowers2Entities(flowers));

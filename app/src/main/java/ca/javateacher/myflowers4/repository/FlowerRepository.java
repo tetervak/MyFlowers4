@@ -7,7 +7,7 @@ import java.util.List;
 import ca.javateacher.myflowers4.domain.Flower;
 
 public interface FlowerRepository {
-  void loadFileData();
+  void loadSampleData();
   void clearAllData();
 
   @NonNull

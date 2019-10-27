@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface FlowerListInteractions {
 
-  void loadFileData();
+  void loadSampleData();
   void clearAllData();
 
   @NonNull

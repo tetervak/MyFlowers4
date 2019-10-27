@@ -22,8 +22,8 @@ public class FlowerListInterImpl implements FlowerListInteractions {
   }
 
   @Override
-  public void loadFileData(){
-    mFlowerRepository.loadFileData();
+  public void loadSampleData(){
+    mFlowerRepository.loadSampleData();
   }
 
   @Override

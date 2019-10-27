@@ -25,8 +25,8 @@ public class FlowerListViewModel extends AndroidViewModel {
     ((FlowerApplication)application).getApplicationComponent().inject(this);
   }
 
-  public void loadFileData(){
-    mInter.loadFileData();
+  public void loadSampleData(){
+    mInter.loadSampleData();
   }
 
   public void clearAllData(){
