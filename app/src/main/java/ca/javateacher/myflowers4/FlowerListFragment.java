@@ -19,8 +19,8 @@ import ca.javateacher.myflowers4.viewmodel.FlowerListViewModel;
 
 public class FlowerListFragment extends Fragment {
 
-  private FlowerRecyclerViewAdapter mAdapter;
-  private FlowerListViewModel mFlowerListViewModel;
+  private FlowerListViewModel mViewModel;
+  private FlowerListPresenter mPresenter;
 
   public FlowerListFragment() {
   }
@@ -35,26 +35,23 @@ public class FlowerListFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
-      View view = inflater.inflate(R.layout.fragment_flower_list, container, false);
+    View view = inflater.inflate(R.layout.fragment_flower_list, container, false);
 
-      // Set the adapter
-      RecyclerView recyclerView = view.findViewById(R.id.flower_list);
-      Context context = view.getContext();
-      recyclerView.setLayoutManager(new LinearLayoutManager(context));
-      mAdapter = new FlowerRecyclerViewAdapter();
-      recyclerView.setAdapter(mAdapter);
+    RecyclerView recyclerView = view.findViewById(R.id.flower_list);
+    Context context = view.getContext();
+    recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-      return view;
+    mPresenter = new FlowerListPresenter(this, recyclerView);
+
+    return view;
   }
 
-  @SuppressWarnings("ConstantConditions")
   @Override
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
-    mFlowerListViewModel = ViewModelProviders.of(this)
+    mViewModel = ViewModelProviders.of(this)
         .get(FlowerListViewModel.class);
-    mFlowerListViewModel.getFlowerListData().observe(this,
-          list -> mAdapter.setFlowerList(list));
+    mPresenter.setViewModel(mViewModel);
   }
 
   @Override
@@ -67,11 +64,11 @@ public class FlowerListFragment extends Fragment {
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
     switch(item.getItemId()) {
       case R.id.load_data_file:{
-        mFlowerListViewModel.loadFileData();
+        mViewModel.loadFileData();
         return true;
       }
       case R.id.clear_all_data:{
-        mFlowerListViewModel.clearAllData();
+        mViewModel.clearAllData();
         return true;
       }
       default:

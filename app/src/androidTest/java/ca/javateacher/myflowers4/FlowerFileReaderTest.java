@@ -1,12 +1,9 @@
 package ca.javateacher.myflowers4;
 
 import android.content.Context;
-
 import androidx.test.platform.app.InstrumentationRegistry;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.List;
 
 import ca.javateacher.myflowers4.model.Flower;
