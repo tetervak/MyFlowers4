@@ -11,7 +11,7 @@ public class FlowerListPresenter {
 
   private static final String TAG = "FlowerListPresenter";
 
-  private FlowerListFragment mFragment;
+  private final FlowerListFragment mFragment;
   private final FlowerRecyclerViewAdapter mAdapter;
 
   public FlowerListPresenter(@NonNull FlowerListFragment fragment,

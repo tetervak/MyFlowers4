@@ -11,8 +11,8 @@ public class FlowerDetailsPresenter {
 
   private static final String TAG = "FlowerDetailsPresenter";
 
-  private FlowerDetailsFragment mFragment;
-  private FragmentFlowerDetailsBinding mBinding;
+  private final FlowerDetailsFragment mFragment;
+  private final FragmentFlowerDetailsBinding mBinding;
 
   public FlowerDetailsPresenter(@NonNull FlowerDetailsFragment fragment,
                                 @NonNull FragmentFlowerDetailsBinding binding) {
@@ -24,6 +24,6 @@ public class FlowerDetailsPresenter {
   public void setViewModel(@NonNull FlowerDetailsViewModel viewModel) {
     Log.d(TAG, "setViewModel() called");
     viewModel
-        .getFlowerDetails().observe(mFragment,flower -> mBinding.setFlower(flower));
+        .getFlowerDetails().observe(mFragment, mBinding::setFlower);
   }
 }
