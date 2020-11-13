@@ -18,7 +18,8 @@
     <fragment
         android:id="@+id/flowerDetailsFragment"
         android:name="ca.javateacher.myflowers4.FlowerDetailsFragment"
-        android:label="Flower Details" />
+        android:label="Flower Details"
+        tools:layout="@layout/fragment_flower_details"/>
     <action
         android:id="@+id/action_global_list"
         app:destination="@id/flowerListFragment"
